@@ -1,0 +1,10 @@
+@@ -110,8 +111,8 @@
+
+Input:
+Output:
+Hello World 
+Explanation:
+Hello World */
+//solution:
+Print Hello World on a single line.*/
+public class Practical4 {
