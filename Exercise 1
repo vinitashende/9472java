@@ -1,0 +1,17 @@
+ex1.) When the value of count becomes 7 or 15, the continue statement plays its role and skip their execution but for other values of the count, the loop will run smoothly.
+consider  i =20
+solution
+public class java1
+{
+public static void main (string []args) 
+  {
+    for(int i=0;i<=20;i++) 
+    {
+      if(i==7 || i==15 ) 
+      {
+      continue;
+      }
+     system.out.println("i= "+i);
+    }
+  }
+}
