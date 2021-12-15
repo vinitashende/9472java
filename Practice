@@ -6,3 +6,36 @@ public class Exercise1 {
  }
  
 }
+
+Example 2. programme for Java single dimensional array below. Write the same programme by assigning the
+array integer values 25, 89 and 100 for the class SingleDimensionDemo. Show the resulting output.
+class SingleDimensionExample
+{
+public static void main(String args[])
+{
+int[] a=new int[3];
+a[0]=20;
+a[1]=30;
+a[2]=40;
+System.out.println("Single dimension array elements are");
+System.out.println(a[0]);
+System.out.println(a[1]);
+System.out.println(a[2]);
+}
+}
+Example 3, programme for Java multi dimensional array below. Write the same programme by assigning the
+array integer value sets (1,2,3), (3,4,5) and (5,6,7) for the class MultiDimensionDemo, for int i=0;i<2,i++ and intj=0;j<2,j++. Show the resulting output. 
+
+class MultiDimensionExample
+{
+public static void main(String args[]){
+int arr[][]={{2,3,4},{4,5,6},{6,7,8}};
+
+for(int i=0;i<3;i++){
+for(int j=0;j<3;j++){
+System.out.print(arr[i][j]+" ");
+}
+System.out.println();
+}
+}}
+
