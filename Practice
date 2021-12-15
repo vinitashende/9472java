@@ -23,6 +23,7 @@ System.out.println(a[1]);
 System.out.println(a[2]);
 }
 }
+
 Example 3, programme for Java multi dimensional array below. Write the same programme by assigning the
 array integer value sets (1,2,3), (3,4,5) and (5,6,7) for the class MultiDimensionDemo, for int i=0;i<2,i++ and intj=0;j<2,j++. Show the resulting output. 
 
