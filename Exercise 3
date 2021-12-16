@@ -51,3 +51,7 @@ result = obj.disp(6.1);
 System.out.println("Answer is:" + result);
 }
 }
+Output:method:60
+method:70,50
+method:6.1
+Answer is:6.1
