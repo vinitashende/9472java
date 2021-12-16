@@ -1,0 +1,24 @@
+ex:1) Write a similar programme for the object Boy and value of int
+a =5. Show the resulting outputs
+Solution:
+import java.io.*;
+interface in1
+{
+final int a = 5;
+void display();
+}
+class testClass implements in1
+{
+public void display()
+{
+System.out.println("Boy");
+}
+public static void main (String[] args)
+{
+testClass t = new testClass();
+t.display();
+System.out.println(a);
+}
+}
+Output:Boy
+5
