@@ -4,3 +4,4 @@ with the elements ‘dog’, ‘70’, new StringBuilder("bcd") and the integer 
 same with the elements ‘cat’, ‘22’, new StringBuilder("abc") and the integer 9.
 Solution:
 public class Program {
+public static void main(String[] args) {
