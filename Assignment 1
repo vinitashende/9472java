@@ -43,3 +43,13 @@ public class Test {
  
  Output:Garbage collector called
 
+ex3) 
+Write a program to create a class called Employee having the following data members.
+1.An ID for storing unique id allocated to every employee.
+2.Name of employee.
+3.age of an employee.
+Also, provide the following methods-
+1. A parameterized constructor to initialize name and age. The ID should be initialized in this 
+constructor.
+2. A method show() to display ID, name, and age.
+3. A method showNextId() to display the ID of the next employee
