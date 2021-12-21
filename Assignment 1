@@ -186,3 +186,8 @@ public class Main {
  myMethod("Anu");
  }
 }
+Output:
+Lina Friend
+sami Friend
+Anu Friend
+
