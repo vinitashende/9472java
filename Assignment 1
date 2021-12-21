@@ -175,3 +175,14 @@ x = 10
 y = 55
 
 ex5) Write a program in java passing parameters and argument. 
+Solution:
+public class Main {
+ static void myMethod(String fname) {
+ System.out.println(fname + " Friend");
+ }
+ public static void main(String[] args) {
+ myMethod("Lina");
+ myMethod("sami");
+ myMethod("Anu");
+ }
+}
