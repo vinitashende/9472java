@@ -1,1 +1,4 @@
 
+ex):Write the  programme to create an object of arrays
+with the elements ‘dog’, ‘70’, new StringBuilder("bcd") and the integer 6. Show the resulting output. Repeat the
+same with the elements ‘cat’, ‘22’, new StringBuilder("abc") and the integer 9.
