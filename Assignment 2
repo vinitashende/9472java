@@ -1,1 +1,100 @@
 
+
+
+
+ex1) 
+
+Solution:
+class GFG {
+	public static void main(String[] args)
+	{
+		int i = 100;		
+		long l = i;
+		float f = l;
+		System.out.println("Int value " + i);
+		System.out.println("Long value " + l);
+		System.out.println("Float value " + f);
+	}
+}
+Output:
+Int value 100
+Long value 100
+Float value 100.0
+
+ex2) 
+
+Solution:// Main class
+public class GFG {
+	public static void main(String[] args)
+	{
+		double d = 100.04;
+		long l = (long)d;
+		int i = (int)l;
+		System.out.println("Double value " + d);
+		System.out.println("Long value " + l);
+		System.out.println("Int value " + i);
+	}
+}
+Output:
+Double value 100.04
+Long value 100
+Int value 100
+
+ex3) 
+Solution:
+// Main class
+class GFG {
+	public static void main(String args[])
+	{
+		byte b = 42;
+		char c = 'a';
+		short s = 1024;
+		int i = 50000;
+		float f = 5.67f;
+		double d = .1234;
+		double result = (f * b) + (i / c) - (d * s);
+		System.out.println("result = " + result);
+	}
+}
+Output:
+result = 626.7784146484375
+
+ex4) 
+Solution:
+// Main class
+class GFG {
+	public static void main(String args[])
+	{
+		byte b = 50;
+		b = (byte)(b * 2);
+		System.out.println(b);
+	}
+}
+Output:
+100
+
+ex5) 
+Solution:
+import java.util.*;
+public class Collectionsorting
+{
+	public static void main(String[] args)
+	{
+		
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("Geeks For Geeks");
+		al.add("Friends");
+		al.add("Dear");
+		al.add("Is");
+		al.add("Superb");
+		Collections.sort(al);
+		System.out.println("List after the use of" +
+						" Collection.sort() :\n" + al);
+	}
+}
+
+Output:
+List after the use of Collection.sort() :
+[Dear, Friends, Geeks For Geeks, Is, Superb]
+
+
