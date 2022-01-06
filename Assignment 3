@@ -1,0 +1,185 @@
+
+code 1)
+public class Multithread1 extends Thread {
+	public void run() {
+		try {
+			System.out.println("thread is executing now........");
+		} catch (Exception e) {
+		}
+	}
+	public static void main(String[] args) {
+		Multithread1 m1 = new Multithread1();
+		m1.start();
+		m1.start();
+	}
+}
+Output:
+thread is executing now........Exception in thread "main"
+java.lang.IllegalThreadStateException
+        at java.base/java.lang.Thread.start(Unknown Source)
+        at Multithread1.main(Multithread1.java:11)
+
+code 2) 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+public class TestThread {
+	public static void main(final String[] arguments) throws InterruptedException {
+		ExecutorService e = Executors.newSingleThreadExecutor();
+
+		try {
+			e.submit(new Thread());
+			System.out.println("Shutdown executor");
+			e.shutdown();
+			e.awaitTermination(5, TimeUnit.SECONDS);
+		} catch (InterruptedException ex) {
+			System.err.println("tasks interrupted");
+		} finally {
+
+			if (!e.isTerminated()) {
+				System.err.println("cancel non-finished tasks");
+			}
+			e.shutdownNow();
+			System.out.println("shutdown finished");
+		}
+	}
+
+	static class Task implements Runnable {
+
+		public void run() {
+
+			try {
+				Long duration = (long)(Math.random() * 20);
+				System.out.println("Running Task!");
+				TimeUnit.SECONDS.sleep(duration);
+			} catch (InterruptedException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
+}
+Output:
+Shutdown executor
+shutdown finished
+
+code 3):
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+public class ProducerConsumerProblem {
+	public static void main(String args[]) {
+
+		BlockingQueue sharedQueue = new LinkedBlockingQueue();
+
+
+		Thread prod = new Thread(new Producer(sharedQueue));
+		Thread cons = new Thread(new Consumer(sharedQueue));
+
+
+		prod.start();
+		cons.start();
+	}
+
+}
+
+
+class Producer implements Runnable {
+
+	private final BlockingQueue sharedQueue;
+
+	public Producer(BlockingQueue sharedQueue) {
+		this.sharedQueue = sharedQueue;
+	}
+
+	@Override
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			try {
+				System.out.println("Produced: " + i);
+				sharedQueue.put(i);
+			} catch (InterruptedException ex) {
+				Logger.getLogger(Producer.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+	}
+
+}
+
+
+class Consumer implements Runnable {
+
+	private final BlockingQueue sharedQueue;
+
+	public Consumer(BlockingQueue sharedQueue) {
+		this.sharedQueue = sharedQueue;
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			try {
+				System.out.println("Consumed: " + sharedQueue.take());
+			} catch (InterruptedException ex) {
+				Logger.getLogger(Consumer.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+	}
+}
+Output:
+Produced: 0
+Produced: 1
+Produced: 2
+Produced: 3
+Produced: 4
+Produced: 5
+Produced: 6
+Produced: 7
+Produced: 8
+Produced: 9
+Consumed: 0
+Consumed: 1
+Consumed: 2
+Consumed: 3
+Consumed: 4
+Consumed: 5
+Consumed: 6
+Consumed: 7
+Consumed: 8
+Consumed: 9
+
+ code 4) 
+ import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+public class TestThread {
+	public static void main(final String[] arguments) throws InterruptedException {
+		Executor e = Executors.newCachedThreadPool();
+		e.execute(new Thread());
+		ThreadPoolExecutor pool = (ThreadPoolExecutor)e;
+		pool.shutdown();
+	}
+
+	static class Thread implements Runnable {
+		public void run() {
+			try {
+				Long duration = (long)(Math.random() * 5);
+				System.out.println("Running Thread!");
+				TimeUnit.SECONDS.sleep(duration);
+				System.out.println("Thread Completed");
+			} catch (InterruptedException ex) {
+				ex.printStackTrace();
+			}
+		}
+	}
+}
+ Output:
+ Running Thread!
+ Thread Completed
+ 
+ code 5) 
+ 
+ 
