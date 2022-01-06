@@ -1,0 +1,137 @@
+
+ex1) See the example programme for Java thread synchronization below. Write the same programme with int i=2;i<=6,i++. Show the resulting output. Repeat the same programme for int=3;i<=9,i++
+     (deadlock). 
+Solution:
+class Table {
+
+	synchronized void printTable(int n) {
+
+		for (int i = 1; i <= 5; i++) {
+
+			System.out.println(n * i);
+
+			try {
+
+				Thread.sleep(400);
+
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+
+		}
+
+	}
+
+}
+
+public class TestSynchronization3 {
+
+	public static void main(String args[]) {
+
+		final Table obj = new Table();
+
+		Thread t1 = new Thread() {
+
+			public void run() {
+
+				obj.printTable(5);
+			}
+
+		};
+
+		Thread t2 = new Thread() {
+
+			public void run() {
+
+				obj.printTable(100);
+
+			}
+
+		};
+
+		t1.start();
+
+		t2.start();
+
+	}
+}
+Output:
+5
+10
+15
+20
+25
+100
+200
+300
+400
+500
+
+ex2) Example code of thread synchronization -
+
+Solution;
+class Table {
+
+	synchronized void printTable(int n) {
+
+		for (int i = 1; i <= 5; i++) {
+
+			System.out.println(n * i);
+
+			try {
+
+				Thread.sleep(400);
+
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+
+		}
+
+	}
+
+}
+public class TestSynchronization3 {
+
+	public static void main(String args[]) {
+
+		final Table obj = new Table();
+
+		Thread t1 = new Thread() {
+
+			public void run() {
+
+				obj.printTable(5);
+
+			}
+
+		};
+
+		Thread t2 = new Thread() {
+
+			public void run() {
+
+				obj.printTable(100);
+
+			}
+
+		};
+		t1.start();
+
+		t2.start();
+
+	}
+
+}
+Output:
+5
+10
+15
+20
+25
+100
+200
+300
+400
+500
+
