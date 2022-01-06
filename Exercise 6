@@ -106,4 +106,4 @@ public static void main(String[] args) {
 }
 }
 Output:
-[19, 18, 17, 16, 15, 13,
+[19, 18, 17, 16, 15, 13, 12]
