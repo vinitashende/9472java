@@ -1,0 +1,109 @@
+
+ex1) Write a program for ascending array sort for sorting integer elements in ascending order
+Solution:
+import java.util.Arrays;
+public class JavaSortingDemo {
+	public static void main(String[] args) {
+		Integer[] numbers = new Integer[] { 18, 19, 13, 12, 15, 17, 16 };
+		Arrays.sort(numbers);
+		System.out.println(Arrays.toString(numbers));
+	}
+}
+ Output:
+ [12, 13, 15, 16, 17, 18, 19]
+
+ex2)  write a program for Binary search. 
+
+Solution:
+import java.util.Arrays;
+class BinarySearchExample2 {
+	public static void main(String args[]) {
+		int arr[] = {10, 20, 30, 40, 50};
+		int key = 30;
+		int result = Arrays.binarySearch(arr, key);
+		if (result < 0)
+			System.out.println("Element is not found!");
+		else
+			System.out.println("Element is found at index: " + result);
+	}
+}
+ Output:
+ Element is found at index: 2
+
+ex3) write a program for call by reference. 
+
+Solution:
+public class JavaTester {
+	public static void main(String[] args) {
+		IntWrapper a = new IntWrapper(30);
+		IntWrapper b = new IntWrapper(45);
+		System.out.println("Before swapping, a = " + a.a + " and b = " + b.a);
+		swapFunction(a, b);
+		System.out.println("\n**Now, Before and After swapping values will be different here**:");
+		System.out.println("After swapping, a = " + a.a + " and b is " + b.a);
+	}
+	public static void swapFunction(IntWrapper a, IntWrapper b) {
+		System.out.println("Before swapping(Inside), a = " + a.a + " b = " + b.a);
+		IntWrapper c = new IntWrapper(a.a);
+		a.a = b.a;
+		b.a = c.a;
+		System.out.println("After swapping(Inside), a = " + a.a + " b = " + b.a);
+	}
+}
+class IntWrapper {
+	public int a;
+	public IntWrapper(int a) {
+		this.a = a;
+	}
+}
+ Output:
+ Before swapping, a = 30 and b = 45
+Before swapping(Inside), a = 30 b = 45
+After swapping(Inside), a = 45 b = 30
+
+**Now, Before and After swapping values will be different here**:
+After swapping, a = 45 and b is 30
+
+ex4) write a program for swap two no. using  call by value. 
+Solution:
+public class Tester{
+   public static void main(String[] args){
+      int a = 30;
+      int b = 45;
+      System.out.println("Before swapping, a = " + a + " and b = " + b);
+      swapFunction(a, b);
+      System.out.println("\n**Now, Before and After swapping values will be same here**:");
+      System.out.println("After swapping, a = " + a + " and b is " + b);
+   }
+   public static void swapFunction(int a, int b) {
+      System.out.println("Before swapping(Inside), a = " + a + " b = " + b);
+      int c = a;
+      a = b;
+      b = c;
+      System.out.println("After swapping(Inside), a = " + a + " b = " + b);
+   }
+}
+Output:
+Before swapping, a = 30 and b = 45
+Before swapping(Inside), a = 30 b = 45
+After swapping(Inside), a = 45 b = 30
+
+**Now, Before and After swapping values will be same here**:
+After swapping, a = 30 and b is 45
+ 
+ 
+ex5) write a program for decending orde
+Solution:
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Shorting3 {
+public static void main(String[] args) {
+	Integer[] numbers = new Integer[] { 18, 19, 13, 12, 15, 17, 16 };
+	Arrays.sort(numbers, Collections.reverseOrder());
+	
+	System.out.println(Arrays.toString(numbers));
+}
+}
+Output:
+[19, 18, 17, 16, 15, 13,
