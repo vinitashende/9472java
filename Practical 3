@@ -1,0 +1,21 @@
+ex1) Write the same programme to throw the exception string
+value “invalid” if integer value of age is less than 22, with else condition “welcome aboard”. Validate for age
+value 19. Show the resulting output. Repeat the same programme to validate for age value 24.
+ 
+ Solution:
+ ublic class ThrowDemo1 {
+	static void validate(int age) {
+		if (age < 24)
+			throw new ArithmeticException("not valid");
+		else
+			System.out.println("welcome to the club");
+	}
+	public static void main(String args[]) {
+		validate(17);
+		System.out.println("code remainder");
+	}
+}
+
+Output:
+Exception in thread "main" java.lang.ArithmeticException: not valid        at ThrowDemo1.validate(ThrowDemo1.java:4)
+        at ThrowDemo1.main(ThrowDemo1.java:9)
